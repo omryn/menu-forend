@@ -1,0 +1,20 @@
+<form class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label" for="componentLabel">Label</label>
+        <input type="text" id="componentLabel" placeholder="Add menu label" required ng-model="label">
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="icon">Icon</label>
+        <input type="url" id="icon" placeholder="Enter icon URL" required ng-model="icon">
+        <img ng-src="{{ icon }}">
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="experiment">Experiment</label>
+        <input type="text" id="experiment" placeholder="Show on experiment" required ng-model="experiment">
+        <img ng-src="{{ experiment }}">
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="data">Preset data</label>
+        <textarea id="data"  required>  </textarea>
+    </div>
+</form>

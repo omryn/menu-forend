@@ -1,0 +1,50 @@
+<div class="edit-page">
+    <div class="edit-panel">
+        <div wix-status-bar ng-controller="StatusCtrl"></div>
+        <div class="categories" ng-controller="MainCtrl">
+            <div ng-repeat="category in menu.data.items"
+                 data-drop="true" ng-model="menu.data.items"
+                 jqyoui-droppable="{revert:'invalid', index:{{ getDropIndex($index) }}, onDrop:'onDrop'}"
+                 data-jqyoui-options="{accept:'.category'}">
+                <div class="placeholder" ng-show="category.placeholder && $first"></div>
+                <div class="category" ng-model="menu.data.items" ng-show="!category.placeholder"
+                     data-drag="true"
+                     jqyoui-draggable="{index: {{$index}}, placeholder:false, animate:false}"
+                        >
+                    <a class="pull-left">
+                        <img ng-src="{{ category.icon }}">
+                    </a>
+
+                    <h2>{{ category.label }}</h2>
+
+                    <div class="components" category-index="{{ $index }}">
+                        <div ng-repeat="component in category.items" ng-mousedown="setSelectedItem(component)"
+                             data-drop="true" ng-model="category.items"
+                             jqyoui-droppable="{revert:'invalid', index:{{ getDropIndex($index) }}, onDrop:'onDrop'}"
+                             data-jqyoui-options="{accept:'.component'}"
+                             ng-class="isSelected(component)"
+                                >
+
+                            <div class="placeholder" ng-show="component.placeholder && $first"></div>
+
+                            <div class="component" ng-model="category.items"
+                                 jqyoui-draggable="{index: {{$index}}, placeholder:false, animate:false}"
+                                 data-drag="true" ng-show="!component.placeholder">
+                                <img ng-src="{{ component.icon }}">
+
+                                <div class="full-width" ng-show="component.label" class="navbar-inner">
+                                    <label class="checkbox push-right">
+                                        <input type="checkbox" ng-model="component.displayData">{{ component.label }}
+                                    </label>
+                                    <pre ng-show="component.displayData && component.preset">{{ component.preset | json }}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div wix-add-component class="add-panel" ng-controller="EditComponentCtrl"
+         ng-model="selectedComponentHolder.item"></div>
+</div>

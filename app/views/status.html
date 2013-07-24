@@ -1,0 +1,10 @@
+<div class="logout">
+    <form class="form-search">
+        <div class="input-append">
+            <input type="text" class="span-2 search-query input-mini" value="{{ getUser() }}" disabled>
+            <button class="btn" ng-click="login()">Log out</button>
+        </div>
+    </form>
+    <span class="label label-info" ng-show="lastUpdate && lastUpdate.user">Last updated by {{ lastUpdate.user }} at {{ lastUpdate.time | date:'d/m/yy HH:mm:ss'}}</span>
+    <span class="label label-success" ng-show="lastUpdate && !lastUpdate.user">Last updated by you at {{ lastUpdate.time | date:'d/m/yy HH:mm:ss'}}</span>
+</div>

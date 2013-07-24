@@ -1,0 +1,5 @@
+<img ng-src="{{ icon }}">
+<div class="full-width" ng-show="label" class="navbar-inner">
+    <label class="checkbox push-right"><input type="checkbox" ng-model="displayData">{{ label }}</label>
+    <pre ng-show="displayData && component.preset">{{ preset | json }}</pre>
+</div>

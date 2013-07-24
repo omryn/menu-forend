@@ -1,0 +1,62 @@
+.logout {
+    margin: 1em;
+}
+.category {
+    width: 100%;
+}
+.category > a  {
+    height: 64px;
+    width: auto;
+    max-width: 64px;
+}
+
+.categories {
+    width: 100%;
+}
+
+.placeholder {
+    height: 20px;
+
+}
+
+.full-width {
+    right: 0;
+    left: 0;
+}
+
+.component  {
+    width: 100%;
+}
+
+.component > * {
+    display: inline-block;
+}
+.component pre {
+    display: block;
+}
+
+.component > img {
+    height: 32px;
+    width: auto;
+    max-width: 32px;
+    vertical-align: top;
+}
+
+.components {
+    display: block;
+    margin-left: 64px;
+}
+
+.edit-panel {
+    display: inline-block;
+}
+.add-panel {
+    display: inline-block;
+    width: 40em;
+    vertical-align: top;
+    margin-top: 5em;
+}
+
+.selected {
+    background-color: lavender;
+}

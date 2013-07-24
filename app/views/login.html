@@ -1,0 +1,14 @@
+<form ng-submit="login()" class="login">
+    <fieldset>
+        <legend>Log in</legend>
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            <input type="text" placeholder="Who are you?" ng-model="userDetails.name" required class="span-2">
+        </div>
+        <label>
+            <input type="checkbox" ng-model="userDetails.persist">
+            Stay logged in
+        </label>
+        <input type="submit" class="btn btn-success" value="Log in">
+    </fieldset>
+</form>
